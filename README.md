@@ -19,6 +19,8 @@
 BeaconEX 是一个用 Go 语言编写的 Minecraft 服务器管理工具箱，集成了服务器状态查询、日志分析、NBT文件处理、RCON远程控制、世界文件备份与分析等多种功能。得益于 Go 语言的跨平台特性，BeaconEX 可以在 Windows、Linux、macOS 等多个操作系统上运行。
 
 > **个人备注**：这是我用于学习 Go 语言网络编程和 NBT 格式解析的参考项目，主要关注 RCON 和服务器查询模块的实现方式。
+>
+> **学习进度记录**：RCON 模块已读完，服务器查询模块阅读中。NBT 编辑器部分留待后续研究。
 
 ## 核心特性
 
@@ -103,6 +105,3 @@ chmod +x build.sh
 | `beaconex-darwin-x86_64-v302` | macOS | Intel | 主程序 |
 | `beaconex-darwin-arm64-v302` | macOS | Apple Silicon | 主程序 |
 | `beaconex-freebsd-x86_64-v302` | FreeBSD | x86_64 | 主程序 |
-| `beaconex-freebsd-arm64-v302` | FreeBSD | ARM64 | 主程序 |
-
-注：下列产物由 **A
