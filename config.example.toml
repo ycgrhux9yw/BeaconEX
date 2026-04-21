@@ -1,0 +1,79 @@
+# BeaconEX Configuration File
+# Copy this file to config.toml and adjust the values as needed.
+# All settings shown here are the defaults unless otherwise noted.
+
+[server]
+# The address and port the BeaconEX server will listen on.
+host = "0.0.0.0"
+port = 8080
+
+# Maximum number of concurrent connections allowed.
+max_connections = 100
+
+# Timeout in seconds for idle connections.
+connection_timeout = 30
+
+# Enable TLS/HTTPS support.
+tls_enabled = false
+tls_cert_file = "certs/server.crt"
+tls_key_file  = "certs/server.key"
+
+[logging]
+# Log level: debug, info, warn, error
+level = "info"
+
+# Log output destination: stdout, stderr, or a file path.
+output = "stdout"
+
+# Enable structured JSON logging.
+json_format = false
+
+# Maximum size of a single log file in megabytes before rotation.
+max_size_mb = 10
+
+# Number of rotated log files to retain.
+max_backups = 5
+
+[beacon]
+# Unique identifier for this BeaconEX node.
+# Leave empty to auto-generate on first run.
+node_id = ""
+
+# Interval in seconds between beacon heartbeat broadcasts.
+heartbeat_interval = 15
+
+# Maximum number of beacons to track simultaneously.
+max_beacons = 500
+
+# Beacon data retention period in hours.
+# Set to 0 to retain indefinitely (not recommended for production).
+retention_hours = 72
+
+[exchange]
+# Enable the exchange/relay functionality.
+enabled = true
+
+# Buffer size for the internal message queue.
+queue_buffer_size = 1024
+
+# Maximum payload size in bytes for a single exchange message.
+max_payload_bytes = 65536
+
+# Allowed origins for CORS (comma-separated). Use "*" to allow all.
+cors_allowed_origins = "*"
+
+[storage]
+# Storage backend: memory, sqlite, or postgres
+backend = "sqlite"
+
+# Path to the SQLite database file (only used when backend = "sqlite").
+sqlite_path = "data/beaconex.db"
+
+# PostgreSQL connection string (only used when backend = "postgres").
+# postgres_dsn = "host=localhost port=5432 user=bex password=secret dbname=beaconex sslmode=disable"
+
+# Maximum number of open database connections.
+db_max_open_conns = 10
+
+# Maximum number of idle database connections.
+db_max_idle_conns = 5
